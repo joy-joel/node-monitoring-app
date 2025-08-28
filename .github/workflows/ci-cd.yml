@@ -3,8 +3,6 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [main]
 
 jobs:
   build-and-push:
@@ -22,3 +20,17 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/node-monitoring-app:latest
+
+
+      - name: Run container
+        run: |
+            # Run new container
+            docker-compose up -d
+
+
+      - name: Remove dangling Docker images
+        run: |
+            docker image prune -f --filter "dangling=true"
+            docker images
+    
+            
