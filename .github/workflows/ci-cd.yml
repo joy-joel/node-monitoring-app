@@ -19,4 +19,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: node-monitoring-app:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/node-monitoring-app:latest
