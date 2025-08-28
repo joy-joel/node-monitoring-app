@@ -53,4 +53,28 @@ jobs:
             docker image prune -f --filter "dangling=true"
             docker images
     
+# To deploy to a remote server, use the job below. Skip the  - name: Run container and use  - name: Deploy to remote server via SSH job instead
+#since i don't have any remote server, i will comment it out
+
+    #   - name: Deploy to remote server via SSH
+    #     uses: appleboy/ssh-action@v1.1.0
+    #     with:
+    #       host: ${{ secrets.SSH_HOST }}
+    #       username: ${{ secrets.SSH_USERNAME }}
+    #       key: ${{ secrets.SSH_PRIVATE_KEY }}
+    #       port: 22
+    #       script: |
+    #         # Navigate to project directory
+    #         cd ~/node-monitoring-app
             
+    #         # Pull latest Docker Compose file
+    #         git pull origin main
+            
+    #         # Log in to Docker Hub
+    #         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+            
+    #         # Pull the latest image
+    #         docker compose pull
+            
+    #         # Restart containers
+    #         docker compose up -d
