@@ -3,27 +3,28 @@ This project demonstrates how to set up a monitoring system for a Node.js applic
 Prerequisites
 To collaborate on or run this project, ensure you have the following:
 
-Docker: Installed on your system (download here).
-Node.js and npm: For local development (download here).
-GitHub Account: For repository management and CI/CD.
-Docker Hub Account: For storing and pulling Docker images.
-A code editor like VS Code (optional but recommended).
+Docker: Installed on your system (download here).  
+Node.js and npm: For local development (download here).  
+GitHub Account: For repository management and CI/CD.  
+Docker Hub Account: For storing and pulling Docker images.  
+A code editor like VS Code (optional but recommended).  
 Basic knowledge of Node.js, Docker, and Git.
 
 ## Project Structure
 
-index.js: Node.js Express application with Prometheus metrics.
+index.js: Node.js Express application with Prometheus metrics.  
 Dockerfile: Defines the Docker image for the Node.js app.
-docker-compose.yml: Configures the app, Prometheus, and Grafana services.
-prometheus.yml: Prometheus configuration for scraping metrics.
-.github/workflows/ci-cd.yml: GitHub Actions workflow for CI/CD.
+docker-compose.yml: Configures the app, Prometheus, and Grafana services.  
+prometheus.yml: Prometheus configuration for scraping metrics.  
+.github/workflows/ci-cd.yml: GitHub Actions workflow for CI/CD.  
 
 ## Setup Instructions
 1. Clone the Repository
 git clone https://github.com/joy-joel/node-monitoring-app.git
-cd node-monitoring-app
 
-2. Install Dependencies
+  cd node-monitoring-app
+
+3. Install Dependencies
 Ensure Node.js is installed, then run:
 `npm install`
 
@@ -99,6 +100,3 @@ Metrics not appearing in Prometheus: Ensure the app's /metrics endpoint is acces
 Grafana data source error: Verify the Prometheus URL (http://prometheus:9090) and network connectivity.
 CI/CD failures: Check GitHub Actions logs for Docker Hub authentication or build errors.
 
-
-License
-This project is licensed under the MIT License. See LICENSE for details.
